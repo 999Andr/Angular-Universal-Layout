@@ -1,0 +1,41 @@
+<div class="bodybox">
+  <h3> Car detail <div>{{message}}</div></h3>
+  <div *ngIf='car'>	
+		<div class="compcontainer">
+			<div class='code'>
+				<table>
+			  	<tr><td><i>id:</i></td><td><strong>{{id}}</strong></td></tr>
+			  	<tr><td><i>name:</i></td><td><strong>{{car.item}}</strong></td></tr>  
+			  	<tr *ngIf='id>9'><td><i>delete:</i></td>
+			  		<td>
+			  			<button class="btn btn-danger" (click)='deleteCar()'>x</button>
+			  		</td>
+			  	</tr>
+		  	</table>
+			</div>
+		</div> 
+
+	 
+    <div class="formcontainer" *ngIf='id>9' [hidden]="del">  
+  		<legend>Update Car</legend>
+  		<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+
+    		<div class="form-group" [ngClass]="{ 'has-error': invalidCarName()}">
+      		<label for="item" class="control-label" [ngClass]="{ 'good': !invalidCarName()}">
+      			New Car Name
+      		</label>
+      		<input type="text" formControlName="item" class="form-control" id="item" name="item" placeholder="car_name">
+      		<p *ngIf="invalidCarName()" id="item_error" class="help-block">
+      			{{ 'Invalid car name.'}}
+      		</p>
+    		</div>
+
+  			<div class="form-group has-error"> 
+    			<button type="submit" class="btn btn-success">Update</button>
+  			</div>
+
+			</form> 
+		</div>
+	</div>
+
+</div>	

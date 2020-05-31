@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cars-ssr-38499": {
+      "hosting": {
+        "frontend": [
+          "cars-ssr-38499"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "hosting": [
+    {
+      "target": "frontend",
+      "public": "dist\\frontend\\dist\\frontend\\browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "ssr"
+        }
+      ]
+    },
+    {
+      "target": "frontend",
+      "public": "dist\\frontend\\dist\\frontend\\browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "ssr"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "source": "dist/frontend"
+  }
+}
